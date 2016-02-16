@@ -127,7 +127,7 @@ Een entiteitstype kan meerdere specialisaties hebben, elk met 1 of meerdere subk
 
 \section{Constraints and Characteristics of Specialization and Generalization Hierarchies}
 \subsection{Constraints on Specialization and Generalization}
-Bij sommige specialisaties is het mogelijk om precies vast te leggen welke entiteiten in een subklasse terecht moeten komen. Zo'n subklassen heten dan \textbf{predikaatgedefinieerde} subklassen (of predikaatgedefinieerd). De conditie die dit beslist is het \textbf{bepalende predikaat}.
+Bij sommige specialisaties is het mogelijk om precies vast te leggen welke entiteiten in een subklasse terecht moeten komen door een conditie op te leggen aan een bepaald superklasse-atribuut. Zo'n subklassen heten dan \textbf{predikaatgedefinieerde} subklassen (of predikaatgedefinieerd). De conditie die dit beslist is het \textbf{bepalende predikaat}. Deze conditie wordt in het EER diagram naast de boog tussen super- en subklasse genoteerd.
 
 Als alle subklassen in een specialisatie hun conditie op hetzelfde superklasse-attribuut hebben, dan heet deze specialisatie een \textbf{attribuutgedefinieerde} specialisatie. Het attribuut heet dan het \textbf{bepalende attribuut}.
 
@@ -139,8 +139,10 @@ Als de specialisatie bepaald is door andere kenmerken, spreken we van een \textb
 
 De constraint \textbf{volledigheid} kan totaal of partieel zijn. Bij \textbf{totale specialisatie} moet elke entiteit van een superklasse ook deel moet uitmaken van minstens \'e\'en subklasse ervan, dit wordt genoteerd met een dubbele lijn. Bij \textbf{parti\"ele specialisatie} moet dit niet (enkele lijn).
 
-Deze 2 soorten constraints zijn onafhankelijk van elkaar.
+Deze twee soorten constraints zijn onafhankelijk van elkaar.
 
+
+In deze sectie staat ook nog een gedeeltelijke lijst van insertion en deletion rules met betrekking tot sub- en superklassen.
 \subsection{Specialization and Generalization Hierarchies and Lattices}
 Subklassen kunnen nog verder onderverdeeld worden in meerdere subklassen. Hierbij moet een onderscheid gemaakt worden tussen:
 \begin{itemize}
