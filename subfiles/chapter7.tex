@@ -127,7 +127,7 @@ Een entiteitstype kan meerdere specialisaties hebben, elk met 1 of meerdere subk
 
 \section{Constraints and Characteristics of Specialization and Generalization Hierarchies}
 \subsection{Constraints on Specialization and Generalization}
-Bij sommige specialisaties is het mogelijk om precies vast te leggen welke entiteiten in een subklasse terecht moeten komen door een conditie op te leggen aan een bepaald superklasse-atribuut. Zo'n subklassen heten dan \textbf{predikaatgedefinieerde} subklassen (of predikaatgedefinieerd). De conditie die dit beslist is het \textbf{bepalende predikaat}. Deze conditie wordt in het EER diagram naast de boog tussen super- en subklasse genoteerd.
+Bij sommige specialisaties is het mogelijk om precies vast te leggen welke entiteiten in een subklasse terecht moeten komen door een conditie op te leggen aan een bepaald superklasse-atribuut. Zo'n subklassen heten dan \textbf{predikaatgedefinieerde} subklassen (of predikaatgedefinieerd). De conditie die dit beslist is het \textbf{bepalende predikaat}. Deze conditie wordt in het EER diagram naast de boog tussen de super- en subklasse genoteerd.
 
 Als alle subklassen in een specialisatie hun conditie op hetzelfde superklasse-attribuut hebben, dan heet deze specialisatie een \textbf{attribuutgedefinieerde} specialisatie. Het attribuut heet dan het \textbf{bepalende attribuut}.
 
@@ -139,7 +139,7 @@ Als de specialisatie bepaald is door andere kenmerken, spreken we van een \textb
 
 De constraint \textbf{volledigheid} kan totaal of partieel zijn. Bij \textbf{totale specialisatie} moet elke entiteit van een superklasse ook deel moet uitmaken van minstens \'e\'en subklasse ervan, dit wordt genoteerd met een dubbele lijn. Bij \textbf{parti\"ele specialisatie} moet dit niet (enkele lijn).
 
-Deze twee soorten constraints zijn onafhankelijk van elkaar.
+Deze 2 soorten constraints zijn onafhankelijk van elkaar.
 
 
 In deze sectie staat ook nog een gedeeltelijke lijst van insertion en deletion rules met betrekking tot sub- en superklassen.
@@ -147,9 +147,9 @@ In deze sectie staat ook nog een gedeeltelijke lijst van insertion en deletion r
 Subklassen kunnen nog verder onderverdeeld worden in meerdere subklassen. Hierbij moet een onderscheid gemaakt worden tussen:
 \begin{itemize}
 \item Een \textbf{specialisatie-hi\"erarchie}: een subklasse kan maar van 1 superklasse afhangen.
-\item Een \textbf{specialisatie-tralie}: een subklasse kan van meer dan 1 superklasse afhangen. Men spreekt ook van een \textit{gedeelde subklasse}.
+\item Een \textbf{specialisatie-tralie} (\textit{latice}): een subklasse kan van meer dan 1 superklasse afhangen. Men spreekt ook van een \textit{gedeelde subklasse}. 
 \end{itemize}
-Een subklasse erft de attributen van alle directe en indirecte superklassen.
+Een subklasse erft de attributen van alle directe en indirecte superklassen (\textit{multiple inheritance}). Noot: wanneer een indirecte superklasse overlappende subklassen heeft, kan het zijn dat een entiteit in meerdere leaf nodes van de boom zit.
 
 ~
 
@@ -164,17 +164,24 @@ Bij het ontwikkelen van een database schema volgens het \textbf{top-down} princi
 
 
 \section{Modeling of UNION Types Using Categories in EER}
-Soms is het nodig om een entiteitstype in een relatie te kunnen voorstellen met meerder superklassen. Die worden dan gegroepeerd in een \textbf{unie} (\textbf{u}), een subklasse van zo'n unie heet een \textbf{categorie}. Een entiteit in de subklasse van de categorie behoort dan tot 1 superklasse (uit de unie van superklassen).
+Soms is het nodig om een entiteitstype in een relatie te kunnen voorstellen met meerder superklassen. Die worden dan gegroepeerd in een \textbf{unie} (\textbf{u}), een subklasse van zo'n unie heet een \textbf{categorie}. Een entiteit in de subklasse van de categorie behoort dan tot 1 superklasse uit de unie van superklassen.
 
-Een \textbf{totale categorie} houdt de unie van alle entiteiten in de superklassen bij (dubbele lijn). Een \textbf{parti\"ele categorie} houdt een deelverzameling van deze unie bij (enkele lijn).
+Een \textbf{totale categorie} bevat de unie van alle entiteiten in de superklassen (dubbele lijn). Deze kan alternatief gerepresenteerd worden door een totale generalisatie of specialisatie. Een \textbf{parti\"ele categorie} bevat een deelverzameling van de unie (enkele lijn).
 
 ~
 
-\noindent Vergelijk met een gemeenschappelijke subklasse:
+\noindent Vergelijking met een gemeenschappelijke subklasse:
 \begin{itemize}
 \item Een gemeenschappelijke subklasse is een deelverzameling van een doorsnede van superklassen.
 \item Een entiteit in de subklasse behoort tot elke superklasse.
 \item Alle attributen van de superklassen worden overge\"erfd naar de subklassen.
+\end{itemize}
+
+
+\noindent Een subklasse van een categorie kan grafisch sterk lijken op gegeneraliseerde superklasse, maar er zijn belangrijke verschillen:
+\begin{itemize}
+\item Een parti\"ele categorie generaliseert niet zijn superklassen, een partieel gegeneraliseerde superklasse generaliseert logisch gezien wel zijn subklassen.
+\item Een partieel gegeneraliseerde superklasse kan entiteiten op zichzelf bevatten, een totale of parti\"ele categorie is verplicht een subset de unie van zijn superklassen (de superklassen kunnen dus entiteiten op zich bevatten, maar de subklasse niet).
 \end{itemize}
 
 
