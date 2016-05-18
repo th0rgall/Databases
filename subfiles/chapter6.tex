@@ -203,7 +203,13 @@ Het verschil tussen het Carthesisch product ($\times$) en de \textsc{join}-opera
 \noindent Een generieke \textsc{join}-operatie heeft de volgende vorm (met selectiecriterium $F$ en relaties $R$, $S$):
 \vspace{-2mm}
 \[ R \,\bowtie_F S = R \,\bowtie_{\text{{\textless}conditie{\textgreater}}} S = \sigma_F(R \times S) \]
-Stel $R$ heeft $n$ tupels en $S$ heeft $m$ tupels, dan heeft een \textsc{join} tussen $R$ en $S$ als resultaat tussen de $0$ en $n \cdot m$ tupels. Als de \textsc{join}-conditie voor geen enkele combinatie van tupels uit $R$ en $S$ voldaan is, dan zal de \textsc{join} $0$ tupels bevatten. Andersom, als de conditie voor elke combinatie voldaan is, dan zal de \textsc{join} $n*m$ tupels bevatten. Ook hier kunnen $\{ \wedge, \vee, \neg \}$ gebruikt worden om condities samen te voegen.
+Stel $R$ heeft $n$ tupels en $S$ heeft $m$ tupels, dan heeft een \textsc{join} tussen $R$ en $S$ als resultaat tussen de $0$ en $n \cdot m$ tupels. Als de \textsc{join}-conditie voor geen enkele combinatie van tupels uit $R$ en $S$ voldaan is, dan zal de \textsc{join} geen tupels bevatten. Andersom, als de conditie voor elke combinatie voldaan is, dan zal de \textsc{join} $n \cdot m$ tupels bevatten. Ook hier kunnen $\{ \wedge, \vee, \neg \}$ gebruikt worden om condities samen te voegen.
+
+Dit laat ons toe om een eigenschap van de \textsc{join}-conditie te defini\"eren, de \textbf{join selectivity}:
+
+\[ \text{join selectivity} = \frac{t_{exp}}{n \cdot m} \]
+
+Met $t_{exp}$ het verwachte aantal tupels in de \textsc{join}. Deze verhouding geeft aan hoe ``selectief'' de \textsc{join}-conditie is.
 
 Een conditie is een \textbf{theta-join} als in $F = C_1 \wedge \dots \wedge C_n$ elke $C_k$ van de vorm $A_i \; \theta \; B_j$ is. Hierbij geldt dat $\theta \in \{=, <, >, \leqslant, \geqslant, \neq \}$ en dat $\text{dom}(A_i) = \text{dom}(B_j)$.
 
