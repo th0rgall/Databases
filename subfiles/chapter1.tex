@@ -9,7 +9,17 @@ Een \textit{database} heeft volgende eigenschappen:
  \item Een database wordt ontworpen, gebouwd en ingevuld voor een specifiek doel.
  \item Aanpassingen moeten zo snel mogelijk weergegeven worden in de database.
 \end{itemize}
-Een \textbf{database management system} (DBMS) is een set van programma's die de gebruiker toelaat een database te cre\"eren en te onderhouden.
+Een \textbf{database management system} (DBMS) is een set van programma's die de gebruiker toelaat een database te cre\"eren en te onderhouden. Het laat meer specifiek toe de database te:
+
+\begin{quote} % quote omgeving om een indentatie te krijgen bij de description lijst
+\begin{description}
+	\item[defini\"eren] = de datatypes, structuren en constraints van de data vastleggen.
+	\item[construeren] = de DB op een opslagmedium zettten.
+	\item[manipuleren] = de DB bevragen (\textit{querying}) en aanpassen om veranderingen in de miniwereld te reflecteren.
+	\item[delen] = meerdere programma's en gebruikers toegang tot de DB verlenen.
+	\item[beveiligen] tegen zowel kwaadaardige gebruikers als hardwarefalen. 
+\end{description}
+\end{quote}
 
 \section{An Example}
 Het manipuleren van een database omvat \textit{querying} en \textit{updating}.
@@ -21,8 +31,6 @@ Een query moet gespecifieerd zijn in een bepaalde query-taal, behorende tot het 
  \item Het logical design wordt omgezet in een \textbf{physical design}, waar men de verdere specificaties voor opslag en toegang tot de database zal vastleggen. Hierna kan men beginnen de database te bevolken. 
 \end{enumerate}
 
-
-\newpage
 \section{Characteristics of the Database Approach}
 Een database bestaat uit een enkele opslagplaats waar gegevens worden bijgehouden die \'e\'en keer gedefinieerd worden en nadien toegankelijk zijn voor alle gebruikers. 
 
@@ -98,7 +106,7 @@ Als meerdere gebruikers een grote database delen, is het logisch dat niet iedere
 Databases kunnen gebruikt worden om persistente opslag voor programma-objecten en datastructuren aan te bieden. Dit is \'e\'en van de redenen voor \textbf{object-oriented database systems}. Een complex object in C++ kan permanent opgeslagen worden in een object-geori\"enteerd DBMS. Zo een object noemen we \textit{persistent}, omdat het de be\"eindiging van het programma overleeft en later direct kan teruggevonden worden.
 
 \subsection{Providing Storage Structures and Search Techniques for Efficient Query Processing}
-Databasesystemen moeten de mogelijkheid hebben tot het effici\"ent uitvoeren van query's en updates. Omdat een database vaak is opgeslagen op een disk, moet de DBMS speciale datastructuren en technieken voorzien om de \textit{seektime} te versnellen. Een oplossing hiervoor is werken met indexering. Een DBMS biedt vaak \textit{buffering} of \textit{caching modules} aan, die bijgehouden worden in het hoofdgeheugen. De \textbf{query processing and optimization module} is verantwoordelijk voor het kiezen van een effici\"ent query-uitvoeringsplan voor elke query, gebaseerd op de huidige opslagstructuur.
+Databasesystemen moeten de mogelijkheid hebben tot het effici\"ent uitvoeren van query's en updates. Omdat een database vaak is opgeslagen op een disk, moet de DBMS speciale datastructuren en technieken voorzien om de \textit{seektime} te versnellen. Een oplossing hiervoor is werken met \textbf{indexering}. Een DBMS biedt vaak \textit{buffering} of \textit{caching modules} aan, die bijgehouden worden in het hoofdgeheugen. De \textbf{query processing and optimization module} is verantwoordelijk voor het kiezen van een effici\"ent query-uitvoeringsplan voor elke query, gebaseerd op de huidige opslagstructuur.
 
 \subsection{Providing Backup and Recovery}
 Een DBMS moet de mogelijkheid bezitten om te herstellen van hardware- of softwarefouten. Het \textbf{backup and recovery subsystem} van de DBMS is verantwoordelijk voor het herstel. Het moet kunnen herstellen, hervatten of een backup maken.
@@ -127,7 +135,7 @@ Sommige databasesystemen hebben de mogelijkheid om informatie af te leiden uit r
 
 \setcounter{section}{7}
 \section{When Not to Use a DBMS}
-Er zijn bepaalde situaties waarbij het gebruik van een DBMS een onnodige overhead kan veroorzaken, wat niet zou voorkomen bij het traditionele file processing. De overhead van een DBMS kan volgende oorzaken hebben:
+Er zijn bepaalde situaties waarbij het gebruik van een DBMS een onnodige \textbf{overhead} kan veroorzaken, wat niet zou voorkomen bij het traditionele file processing. De overhead van een DBMS kan volgende oorzaken hebben:
 \begin{itemize}
 \item Te hoge initi\"ele kosten voor hardware, software en training
 \item De algemeenheid van een DBMS
