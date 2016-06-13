@@ -18,9 +18,9 @@
 \subsection{Entities and Attributes}
 Een \textbf{entiteit} is een \textit{ding} in de echte wereld met een onafhankelijk bestaan, zij het fysiek of conceptueel. Elke entiteit heeft \textbf{attributen}, eigenschappen die de entiteit omschrijven. Deze attributen zijn een groot stuk van de data die wordt opgeslagen.
 
-Een attribuut kan verder opgesplitst worden in deelattributen, bijvoorbeeld: het attribuut \textit{``Adres''} kan bijvoorbeeld omschreven worden door de deelattributen \textit{``Straat''}, \textit{``Huisnummer''}, \textit{``Postcode''} en \textit{``Gemeente''}. Dit noemt men een \textbf{composite attribute}. In het andere geval spreekt men over een \textbf{simple attribute}.
+Een attribuut kan verder opgesplitst worden in deelattributen, bijvoorbeeld: het attribuut \textit{``Adres''} kan bijvoorbeeld omschreven worden door de deelattributen \textit{``Straat''}, \textit{``Huisnummer''}, \textit{``Postcode''} en \textit{``Gemeente''}. Dit noemt men een \textbf{composite attribute}. In het andere geval spreekt men over een \textbf{simple attribute}. Composite attributes kunnen in tekstvorm gedenoteerd worden met \textit{Attribuutnaam(Deelattribuut1,Deelattribuut2)}.
 
-Een attribuut kan \textbf{single-valued} of \textbf{multivalued} zijn. In het laatste geval is het mogelijk dat een entiteit voor \'e\'en attribuut meerdere waarden heeft (bv. een persoon heeft geen, \'e\'en of meerdere diploma's).
+Een attribuut kan \textbf{single-valued} of \textbf{multivalued} zijn. In het laatste geval is het mogelijk dat een entiteit voor \'e\'en attribuut meerdere waarden heeft (bv. een persoon heeft geen, \'e\'en of meerdere diploma's). Multivalued attributen kunnen in tekstvorm gedenoteerd worden met \textit{\{Attribuutnaam\}}.
 
 Een attribuut kan \textbf{stored} zijn, of kan \textbf{derived} (afgeleid) zijn uit andere attributen (bv. de \textit{``Leeftijd''} kan afgeleid worden uit de \textit{``Geboortedatum''}).
 
@@ -149,7 +149,7 @@ Subklassen kunnen nog verder onderverdeeld worden in meerdere subklassen. Hierbi
 \item Een \textbf{specialisatie-hi\"erarchie}: een subklasse kan maar van 1 superklasse afhangen.
 \item Een \textbf{specialisatie-tralie} (\textit{latice}): een subklasse kan van meer dan 1 superklasse afhangen. Men spreekt ook van een \textit{gedeelde subklasse}. 
 \end{itemize}
-Een subklasse erft de attributen van alle directe en indirecte superklassen (\textit{multiple inheritance}). Noot: wanneer een indirecte superklasse overlappende subklassen heeft, kan het zijn dat een entiteit in meerdere leaf nodes van de boom zit.
+Een subklasse erft de attributen van alle directe en indirecte superklassen (\textit{multiple inheritance}). Noot: wanneer een indirecte superklasse van een entiteitstype directe overlappende subklassen heeft, dan kan het zijn dat een entiteit van dat entiteitstype in meerdere leaf nodes van de hi\"erarchie vertegenwoordigd is, onafhankelijk van het soort specialisaties die tussen de indirecte superklasse en de leaf node zitten.
 
 ~
 
@@ -170,19 +170,13 @@ Een \textbf{totale categorie} bevat de unie van alle entiteiten in de superklass
 
 ~
 
-\noindent Vergelijking met een gemeenschappelijke subklasse:
+\noindent Een subklasse van een categorie kan lijken op een gegeneraliseerde superklasse, maar er zijn belangrijke verschillen:
 \begin{itemize}
-\item Een gemeenschappelijke subklasse is een deelverzameling van een doorsnede van superklassen.
-\item Een entiteit in de subklasse behoort tot elke superklasse.
-\item Alle attributen van de superklassen worden overge\"erfd naar de subklassen.
+\item Een parti\"ele categorie generaliseert niet zijn superklassen. De superklassen kunnen verschillende primary keys hebben. De subklassen van een gegeneraliseerde superklasse hebben verplicht dezelfde primary key.
+\item Een partieel gegeneraliseerde superklasse kan entiteiten bevatten die niet in een subklasse ervan bestaan. Elke categorie daarentegen bevat verplicht een subset van de unie van zijn superklassen. Een categorie kan dus geen entiteiten bevatten die niet in een superklasse ervan bestaan.
 \end{itemize}
 
-
-\noindent Een subklasse van een categorie kan grafisch sterk lijken op gegeneraliseerde superklasse, maar er zijn belangrijke verschillen:
-\begin{itemize}
-\item Een parti\"ele categorie generaliseert niet zijn superklassen, een partieel gegeneraliseerde superklasse generaliseert logisch gezien wel zijn subklassen.
-\item Een partieel gegeneraliseerde superklasse kan entiteiten op zichzelf bevatten, een totale of parti\"ele categorie is verplicht een subset de unie van zijn superklassen (de superklassen kunnen dus entiteiten op zich bevatten, maar de subklasse niet).
-\end{itemize}
+\noindent Het verschilt ook van een gemeenschappelijke subklasse. Een gemeenschappelijke subklasse behoort tot de entiteits\textit{doorsnede} van zijn superklassen. Een entiteit in een gemeenschappelijke subklasse behoort dus verplicht ook tot al zijn superklassen en erft al de attributen van die superklassen over. Een categorie behoort tot de entiteits\textit{unie} van twee superklassen. Het behoort dus (gewoonlijk)\footnote{Het is misschien wel mogelijk dat een entiteit van een categorie tot meerdere van zijn superklassen behoort, als die superklassen en de categorie ook nog op een andere manier geraleteerd zijn. Dit is echter onduidelijk voor de schrijver van deze opmerking.} tot slechts \'e\'en van zijn superklassen en erft enkel de attributen daarvan over.
 
 
 \section{A Sample UNIVERSITY EER Schema, Design Choices, and Formal Definitions}
@@ -199,8 +193,6 @@ Dit kan ook gedaan worden als alle subklassen weinig lokale attributen hebben.
 \item Het kiezen voor disjunctie/overlapping en totale/parti\"ele constraints hangt af van het doel van de database. Standaard kiest men voor overlapping en de parti\"ele contraint.
 \end{itemize}
 
-
-\newpage
 \section{Data Abstraction, Knowledge Representation, \& Ontology Concepts}
 Hier worden 4 abstractieconcepten besproken die worden gebruikt in EER modellen en \textit{knowledge-representation} schema's. Deze laatste zijn ook een soort database-modellen, maar waarbij wordt uitgegaan van het goed representeren van reeds gegeven data.
 
