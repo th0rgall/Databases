@@ -1,13 +1,13 @@
 Databases
 =========
 
-Gegevensbanken (B-KUL-H01O9A)
+This is a Latex summary of the book used in the databases ("Gegevensbanken", (B-KUL-H01O9A)) course at KU Leuven. The book is written in English, the summary in Dutch. 
 
-## PDF
+The summary includes almost all information from the book and adheres to its structure to the most nested subtitles, but it equally omits almost all examples.
 
-[![PDF Status](https://www.sharelatex.com/github/repos/KULeuven-CS/Databases/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/KULeuven-CS/Databases/builds/latest/output.pdf)
+This branch is my fork to which I add additional explanations from the books' examples and other sources (slides) where I think they are useful.
 
-Please **star** this repository if you found its content useful!
+There is also the ``fixes`` branch solely meant for typo and reasoning fixes, in this branch the content of the original summary has not been changed.
 
 ## Versions of the book
 
