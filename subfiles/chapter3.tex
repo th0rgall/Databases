@@ -3,7 +3,7 @@
 \section{Relational Model Concepts}
 Een \textbf{relationele database} bestaat uit verschillende \textit{relaties}. 
 \begin{description}
-	\item[Mathematisch] Een tabel uit simpele lineaire rijen, ook wel eens naar een \textit{flat file} genoemd voor de simpele, lineaire structuur. Rijen hebben elk hun eigen kolom met informatie erin.
+	\item[Mathematisch] Een tabel bestaat uit simpele lineaire rijen, ook wel eens naar een \textit{flat file} genoemd voor de simpele, lineaire structuur. Rijen hebben elk hun eigen kolom met informatie erin.
 	\item[Formeel] Formeel gezien spreken we over \textbf{tupels} i.p.v. \textit{rijen} en over \textit{attributen} i.p.v. \textit{kolommen}, elk met een \textit{domein}. De tabel wordt een \textbf{relation} genoemd.
 \end{description}
 
@@ -75,7 +75,7 @@ De \textbf{statica-regels} slaan op 1 toestand van \textit{DB} en gelden in elke
 \subsection{Integrity, Referential Integrity and Foreign Keys}
 Volgens de \textbf{entitity integrity constraint} kan een primaire sleutel nooit \texttt{NULL} zijn. Deze constraint bepaalt ook dat een tupel niet meer dan 1 keer mag voorkomen in een extensie.
 
-De \textbf{referential integrity constraint} bepaalt dat een verwijzing naar een andere tupel geldig moet zijn. Als een tupel naar een andere tupel verwijst, moet die andere ook tupel bestaan.
+De \textbf{referential integrity constraint} bepaalt dat een verwijzing naar een andere tupel geldig moet zijn. Als een tupel naar een andere tupel verwijst, moet die andere tupel ook bestaan.
 
 ~
 
@@ -95,7 +95,7 @@ De \textbf{functional dependency constraint} cre\"eert een functionele relatie t
 
 ~
 
-\noindent De constraints die tot nu vernoemd werden, zijn \textbf{state constraints} omdat ze bepalen of een database zich een een geldige toestand bevindt.
+\noindent De constraints die tot nu vernoemd werden, zijn \textbf{state constraints} omdat ze bepalen of een database zich in een geldige toestand bevindt.
 
 Een andere soort constraints zijn de \textbf{transition constraints} en bepalen welke overgangen tussen databasetoestanden geldig zijn.
 
