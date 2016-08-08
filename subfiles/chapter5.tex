@@ -1,4 +1,5 @@
 \chapter{SQL: Advanced Queries, Assertions, Triggers, and Views}
+\textit{Dit is hoofdstuk 6 in de zesde internationale editie.}
 \section{More Complex SQL Retrieval Queries}
 \subsection{Comparisons Involving NULL and Three-Valued Logic}
 In SQL kan \texttt{NULL} 3 verschillende betekenissen hebben:
@@ -9,7 +10,7 @@ In SQL kan \texttt{NULL} 3 verschillende betekenissen hebben:
 \end{enumerate}
 Omdat het vaak niet mogelijk is om te achterhalen over welk type \texttt{NULL} het gaat, gaat men in SQL ervan uit dat elke \texttt{NULL}-waarde anders is dan elke andere \texttt{NULL}-waarde. Als men een vergelijking (bv. \textbf{AND}, \textbf{OR} en \textbf{NOT}) uitvoert met een \texttt{NULL}-waarde, kan de juiste uitkomst zowel \texttt{TRUE} als \texttt{FALSE} zijn. Daarom wordt de uitkomst van zo'n vergelijking altijd met \texttt{UNKNOWN} aangeduid. SQL gebruikt dus \textbf{three-valued logic} in plaats van de standaard \textbf{Boolean logic} (\textit{two-valued}).
 
-\textit{Tabel 5.1 op pagina \textbf{112} toont alle mogelijke uitkomsten in deze logica.}
+\textit{Tabel 5.1 op pagina \textbf{112} (Tabel 6.1 op pagina \textbf{116} in zesde internationale editie) toont alle mogelijke uitkomsten in deze logica.}
 
 De algemene regel is dat in \textit{select-project-join} queries enkel de combinaties van tupels die evalueren naar \texttt{TRUE} geselecteerd worden. Combinaties van tupels die evalueren naar \texttt{FALSE} of \texttt{UNKNOWN} worden dus niet geselecteerd. De uitzonderingen op deze regel zien we in 5.1.6.
 
